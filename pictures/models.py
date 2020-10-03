@@ -1,3 +1,6 @@
+##########################################
+# PICTURES APP DATA MODELS ###############
+##########################################
 from django.db import models
 
 # Create your models here.

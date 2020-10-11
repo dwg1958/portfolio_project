@@ -1,7 +1,9 @@
 
 <!doctype html>
+
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -42,7 +44,8 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-          <img src="/media/images/Avatar.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+          <!--<img src="/media/images/Avatar.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> -->
+          <img src="{% static 'Avatar.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
           David Griff
         </a>
 
@@ -125,7 +128,7 @@
   <div class="container">
 
     <br />
-    <h4 class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</h4>
+    <p class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</p>
     <br />
   </div>
 </footer>

@@ -111,15 +111,17 @@
 
         {% for blog in blogs.all %}
           <div class="blog-post">
-            <a href = ""><h3 class="blog-post-title">{{ blog.title }}</h3></a>
-            <p class="blog-post-meta">{{ blog.date }} by <a href="#">David</a></p>
+            <a href = "/blog/{{blog.id }}/"><h3 class="blog-post-title">{{ blog.title }}</h3></a>
+            <p class="blog-post-meta">{{ blog.pub_date_pretty }} by <a href="#">David</a></p>
             <div class="container">
               <div class="row">
                 <div class="col-sm">
-                  <img src="{{ blog.image.url }}" class="img-thumbnail" alt="Responsive image">
+                  <a href = "/blog/{{blog.id }}/">
+                    <img src="{{ blog.image.url }}" class="img-thumbnail" alt="Responsive image">
+                  </a>
                 </div>
                 <div class="col-sm">
-                  {{ blog.bodycopy|safe }}
+                  {{ blog.summary|safe }}
                 </div>
               </div>
             </div>
@@ -137,7 +139,7 @@
   <div class="container">
 
     <br />
-    <h4 class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</h4>
+    <p class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</p>
     <br />
   </div>
 </footer>

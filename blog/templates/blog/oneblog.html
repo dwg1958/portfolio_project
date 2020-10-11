@@ -96,6 +96,9 @@
       <p>
         <a href="mailto:davidgriff@gmail.com" target="_blank" class="btn btn-primary my-2">Email me!</a>
       </p>
+      <p>
+        <a href="{{BASE_DIR}}/blog" class="btn btn-primary my-2">Back to All blogs list</a>
+      </p>
     </div>
   </section>
 
@@ -105,21 +108,13 @@
       <div class="row">
 
         <div class="blog-post">
-          <h2 class="blog-post-title">Single Blog Post</h2>
-          <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+          <h2 class="blog-post-title">{{ blogpost.title }}</h2>
+          <p class="blog-post-meta">{{blogpost.pub_date_pretty}} by <a href="#">Chris</a></p>
           <div class="container-fluid">
-            <img src="{{BASE_DIR}}/media/images/B0000203.jpg" class="img-fluid" alt="Responsive image">
+            <img src="{{ blogpost.image.url}}" class="img-fluid" alt="Responsive image">
           </div>
-          <br /><br />
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <ul>
-            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-            <li>Donec id elit non mi porta gravida at eget metus.</li>
-            <li>Nulla vitae elit libero, a pharetra augue.</li>
-          </ul>
-          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-        </div><!-- /.blog-post -->
+          <br />
+          {{ blogpost.bodycopy | safe }}
 
       </div>
     </div>
@@ -131,7 +126,7 @@
   <div class="container">
 
     <br />
-    <h4 class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</h4>
+    <p class="container text-center text-light" >🅒 DavidGriff {% now "Y" %}</p>
     <br />
   </div>
 </footer>

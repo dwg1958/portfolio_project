@@ -43,7 +43,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
           <!--<img src="/media/images/Avatar.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> -->
           <img src="{% static 'Avatar.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
           David Griff
@@ -56,10 +56,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog/">Blog</a>
+              <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Gallery</a>

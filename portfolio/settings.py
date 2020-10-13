@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'   : 'django.db.backends.postgresql',
-        'NAME'     : 'portfoliodb',
+        'NAME'     : ' ',
         'USER'     : 'postgres',
         'PASSWORD' : 'pythoncourse2020',
         'HOST'     : 'localhost',
@@ -132,3 +132,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

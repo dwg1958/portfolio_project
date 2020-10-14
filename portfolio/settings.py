@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'   : 'django.db.backends.postgresql',
-        'NAME'     : ' ',
+        'NAME'     : 'portfoliodb',
         'USER'     : 'postgres',
         'PASSWORD' : 'pythoncourse2020',
         'HOST'     : 'localhost',
@@ -123,16 +123,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# This is where the collectstatic file will go look:
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    # BASE_DIR / 'static'
+    BASE_DIR / 'portfolio/staticfiles'
 ]
 
+# ..and this is where it will make it's versions/copies..
 STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
+# pass all secret stuff off to local_settings (gitignore)
 try:
     from local_settings import *
 except ImportError:
